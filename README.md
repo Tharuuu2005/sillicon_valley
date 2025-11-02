@@ -1,5 +1,5 @@
 # EN Special Term Project : Automatic Trash Sorter
--> Group 2 
+-> Group 2   
 -> Supervised by Dr.Tharaka Smarasinghe
 
 
