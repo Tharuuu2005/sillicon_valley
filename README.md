@@ -3,263 +3,263 @@
 -> Supervised by Dr.Tharaka Smarasinghe
 
 
-🧭 AI Trash Classification with Raspberry Pi — Full Roadmap
+🧭 AI Trash Classification with Raspberry Pi — Full Roadmap  
 ⚙️ Stage 1 — Core Foundations (Week 1–2)
 
-Goal: Learn the essential tools — Python, OpenCV, and Raspberry Pi basics.
+Goal: Learn the essential tools — Python, OpenCV, and Raspberry Pi basics.  
 
-📘 Learn
+📘 Learn  
 
-Python fundamentals: data types, loops, NumPy, file I/O
+Python fundamentals: data types, loops, NumPy, file I/O  
 
-OpenCV basics: image loading, color detection, contour detection
+OpenCV basics: image loading, color detection, contour detection  
 
-Raspberry Pi setup: OS installation, SSH, camera setup
+Raspberry Pi setup: OS installation, SSH, camera setup  
 
-🧩 Practice
+🧩 Practice  
 
-Use cv2.VideoCapture(0) to display live video.
+Use cv2.VideoCapture(0) to display live video.  
 
-Write scripts to:
+Write scripts to:  
 
-Convert images to grayscale
+Convert images to grayscale  
 
-Detect color regions (plastic often has shiny color)
+Detect color regions (plastic often has shiny color)  
 
-Capture & save images when a button is pressed
+Capture & save images when a button is pressed  
 
-🎓 Resources
+🎓 Resources  
 
-Python Crash Course (freeCodeCamp)
+Python Crash Course (freeCodeCamp)  
 
-OpenCV Python Course
+OpenCV Python Course  
 
-Getting Started with Raspberry Pi Camera
+Getting Started with Raspberry Pi Camera  
 
-🤖 Stage 2 — Machine Learning & Computer Vision Concepts (Week 2–3)
+🤖 Stage 2 — Machine Learning & Computer Vision Concepts (Week 2–3)  
 
-Goal: Understand how image classification models work.
+Goal: Understand how image classification models work.  
 
-📘 Learn
+📘 Learn  
 
-What is machine learning vs. deep learning
+What is machine learning vs. deep learning  
 
-How CNNs (Convolutional Neural Networks) process images
+How CNNs (Convolutional Neural Networks) process images  
 
-Dataset → Training → Testing → Model evaluation
+Dataset → Training → Testing → Model evaluation  
 
-🧩 Practice
+🧩 Practice  
 
-Train a simple classifier on your laptop using scikit-learn or TensorFlow.
+Train a simple classifier on your laptop using scikit-learn or TensorFlow.  
 
-Try classifying MNIST digits or CIFAR-10 images.
+Try classifying MNIST digits or CIFAR-10 images.  
 
-Visualize CNN layers using TensorBoard.
+Visualize CNN layers using TensorBoard.  
 
-🎓 Resources
+🎓 Resources  
 
-Deep Learning Crash Course – freeCodeCamp
+Deep Learning Crash Course – freeCodeCamp  
 
-Google ML Crash Course
+Google ML Crash Course  
 
-Kaggle: Intro to Machine Learning
+Kaggle: Intro to Machine Learning  
 
-📸 Stage 3 — Build Your Dataset (Week 3–4)
+📸 Stage 3 — Build Your Dataset (Week 3–4)  
 
-Goal: Capture and label images of trash items.
+Goal: Capture and label images of trash items.  
 
-📘 Learn
+📘 Learn  
 
-Data collection best practices (consistent lighting, angles, background)
+Data collection best practices (consistent lighting, angles, background)  
 
-Folder structure for datasets
+Folder structure for datasets  
 
-Data augmentation (flips, rotations, scaling)
+Data augmentation (flips, rotations, scaling)  
 
-🧩 Practice
+🧩 Practice  
 
-Capture at least 200–300 images per class using your Pi or phone.
+Capture at least 200–300 images per class using your Pi or phone.  
 Classes:
 
-dataset/
-  ├─ paper/
-  ├─ plastic/
-  ├─ metal/
-  └─ organic/
+dataset/  
+  ├─ paper/  
+  ├─ plastic/  
+  ├─ metal/  
+  └─ organic/  
 
 
-Use ImageDataGenerator to augment data.
+Use ImageDataGenerator to augment data.  
 
-Split into train/test (80%/20%).
+Split into train/test (80%/20%).  
 
-🎓 Tools
+🎓 Tools  
 
-OpenCV for capturing images
+OpenCV for capturing images  
 
-LabelImg (if you decide to extend to object detection later)
+LabelImg (if you decide to extend to object detection later)  
 
-🧠 Stage 4 — Model Training (Week 4–5)
+🧠 Stage 4 — Model Training (Week 4–5)  
 
-Goal: Train a CNN or use transfer learning with MobileNetV2.
+Goal: Train a CNN or use transfer learning with MobileNetV2.  
 
-📘 Learn
+📘 Learn  
 
-TensorFlow/Keras basics
+TensorFlow/Keras basics  
 
-Transfer learning and fine-tuning
+Transfer learning and fine-tuning  
 
-Loss functions, accuracy metrics
+Loss functions, accuracy metrics  
 
-🧩 Practice
+🧩 Practice  
 
-Load a pretrained model:
+Load a pretrained model:  
 
-base = tf.keras.applications.MobileNetV2(weights='imagenet', include_top=False, input_shape=(224,224,3))
+base = tf.keras.applications.MobileNetV2(weights='imagenet', include_top=False, input_shape=(224,224,3))  
 
 
-Add classification layers for 4 classes.
+Add classification layers for 4 classes.  
 
-Train and evaluate on your dataset.
+Train and evaluate on your dataset.  
 
-Save as .h5 and convert to .tflite:
+Save as .h5 and convert to .tflite:  
 
-converter = tf.lite.TFLiteConverter.from_keras_model(model)
-tflite_model = converter.convert()
-open("trash_classifier.tflite", "wb").write(tflite_model)
+converter = tf.lite.TFLiteConverter.from_keras_model(model)  
+tflite_model = converter.convert()  
+open("trash_classifier.tflite", "wb").write(tflite_model)  
 
-🎓 Resources
+🎓 Resources  
 
-TensorFlow Transfer Learning Tutorial
+TensorFlow Transfer Learning Tutorial  
 
-Kaggle: Computer Vision Course
+Kaggle: Computer Vision Course  
 
-💻 Stage 5 — Deploy Model on Raspberry Pi (Week 6)
+💻 Stage 5 — Deploy Model on Raspberry Pi (Week 6)  
 
-Goal: Run the .tflite model in real time on your Raspberry Pi.
+Goal: Run the .tflite model in real time on your Raspberry Pi.  
 
-📘 Learn
+📘 Learn  
 
-TensorFlow Lite Interpreter
+TensorFlow Lite Interpreter  
 
-Real-time inference with Pi Camera
+Real-time inference with Pi Camera  
 
-Optimizing model performance (quantization, resizing input)
+Optimizing model performance (quantization, resizing input)  
 
-🧩 Practice
+🧩 Practice  
 
-Install dependencies:
+Install dependencies:  
 
-pip install tensorflow-lite opencv-python
+pip install tensorflow-lite opencv-python  
 
 
-Run inference:
+Run inference:  
 
-import tensorflow as tf, cv2, numpy as np
-interpreter = tf.lite.Interpreter(model_path="trash_classifier.tflite")
-interpreter.allocate_tensors()
+import tensorflow as tf, cv2, numpy as np  
+interpreter = tf.lite.Interpreter(model_path="trash_classifier.tflite")  
+interpreter.allocate_tensors()  
 
 
-Show classification results on the live video feed with cv2.putText().
+Show classification results on the live video feed with cv2.putText().  
 
-🎓 Resources
+🎓 Resources  
 
-TensorFlow Lite Raspberry Pi Guide
+TensorFlow Lite Raspberry Pi Guide  
 
-YouTube: TensorFlow Lite on Raspberry Pi
+YouTube: TensorFlow Lite on Raspberry Pi  
 
-🔌 Stage 6 — Hardware Integration (Week 7)
+🔌 Stage 6 — Hardware Integration (Week 7)  
 
-Goal: Control LEDs, servos, or motors based on detected class.
+Goal: Control LEDs, servos, or motors based on detected class.  
 
-📘 Learn
+📘 Learn  
 
-Using Raspberry Pi GPIO pins with Python
+Using Raspberry Pi GPIO pins with Python  
 
-Servo and relay control
+Servo and relay control  
 
-Mapping AI outputs to hardware actions
+Mapping AI outputs to hardware actions  
 
-🧩 Practice
+🧩 Practice  
 
-Blink LEDs for each detected category.
+Blink LEDs for each detected category.  
 
-Move servo to drop item into the correct bin.
+Move servo to drop item into the correct bin.  
 
-if label == "Plastic": servo_pin.write(90)
-elif label == "Paper": servo_pin.write(45)
+if label == "Plastic": servo_pin.write(90)  
+elif label == "Paper": servo_pin.write(45)  
 
 
-Optional: use ultrasonic sensor to detect object presence.
+Optional: use ultrasonic sensor to detect object presence.  
 
-🎓 Resources
+🎓 Resources  
 
-GPIOZero Python Docs
+GPIOZero Python Docs  
 
-Raspberry Pi Servo Motor Tutorial
+Raspberry Pi Servo Motor Tutorial  
 
-⚡ Stage 7 — Optimization & Expansion (Week 8+)
+⚡ Stage 7 — Optimization & Expansion (Week 8+)  
 
-Goal: Make it faster, more accurate, and smarter.
+Goal: Make it faster, more accurate, and smarter.  
 
-📘 Learn
+📘 Learn  
 
-Model quantization (INT8, FP16)
+Model quantization (INT8, FP16)  
 
-Using Google Coral TPU or Raspberry Pi 5 NPU
+Using Google Coral TPU or Raspberry Pi 5 NPU  
 
-Combining non-vision sensors (metal detector, moisture sensor)
+Combining non-vision sensors (metal detector, moisture sensor)  
 
-🧩 Practice
+🧩 Practice  
 
-Quantize model with TensorFlow Lite converter.
+Quantize model with TensorFlow Lite converter.  
 
-Use hybrid approach:
+Use hybrid approach:  
 
-Metal detector → quickly identify metallic waste
+Metal detector → quickly identify metallic waste  
 
-Camera AI → classify other types
+Camera AI → classify other types  
 
-🎓 Resources
+🎓 Resources  
 
-TensorFlow Lite Optimization Guide
+TensorFlow Lite Optimization Guide  
 
-Coral USB Accelerator Docs
+Coral USB Accelerator Docs  
 
-🚀 Stage 8 — Complete System Project
+🚀 Stage 8 — Complete System Project  
 
-Goal: Build a working prototype.
+Goal: Build a working prototype.  
 
-🧩 Combine:
+🧩 Combine:  
 
-Raspberry Pi camera for classification
+Raspberry Pi camera for classification  
 
-GPIO-controlled servos for sorting
+GPIO-controlled servos for sorting  
 
-Optional LCD/OLED display to show results
+Optional LCD/OLED display to show results  
 
-Enclosure with 4 bins (paper, plastic, metal, organic)
+Enclosure with 4 bins (paper, plastic, metal, organic)  
 
-📘 Bonus Additions
+📘 Bonus Additions  
 
-Web dashboard using Flask or Streamlit
+Web dashboard using Flask or Streamlit  
 
-Data logging (how much of each category per day)
+Data logging (how much of each category per day)  
 
-Add sound feedback (“Plastic detected!”)
+Add sound feedback (“Plastic detected!”)  
 
-🗓️ Suggested Timeline Summary
-Week	Stage	Focus	Key Outcome
-1–2	Foundations	Python + OpenCV + Pi setup	Capture and display images
-2–3	ML Concepts	CNN + datasets	Understand image classification
-3–4	Dataset	Collect 4-class dataset	Dataset ready for training
-4–5	Model Training	MobileNetV2 fine-tuning	Trained .tflite model
-6	Deployment	TensorFlow Lite on Pi	Real-time classification
-7	Hardware Integration	GPIO + Servo + Sorting	Automated sorting
-8+	Optimization	Quantization + Hybrid sensing	Faster, more reliable system
-🧩 Optional Add-ons
+🗓️ Suggested Timeline Summary  
+Week	Stage	Focus	Key Outcome  
+1–2	Foundations	Python + OpenCV + Pi setup	Capture and display images  
+2–3	ML Concepts	CNN + datasets	Understand image classification  
+3–4	Dataset	Collect 4-class dataset	Dataset ready for training  
+4–5	Model Training	MobileNetV2 fine-tuning	Trained .tflite model  
+6	Deployment	TensorFlow Lite on Pi	Real-time classification  
+7	Hardware Integration	GPIO + Servo + Sorting	Automated sorting  
+8+	Optimization	Quantization + Hybrid sensing	Faster, more reliable system  
+🧩 Optional Add-ons  
 
-Use YOLOv8 + Pi 5 for object detection.
+Use YOLOv8 + Pi 4 for object detection.  
 
-Add cloud logging via Firebase.
+Add cloud logging via Firebase.  
 
-Integrate Arduino for precise actuation control.
+Integrate Arduino for precise actuation control.  
