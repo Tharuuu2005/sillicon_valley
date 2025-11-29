@@ -1,6 +1,6 @@
 # EN Special Term Project : Automatic Trash Sorter
 -> Group 2   
--> Supervised by Dr.Tharaka Smarasinghe
+-> Supervised by Prof.Tharaka Smarasinghe
 
 
 🧭 AI Trash Classification with Raspberry Pi — Full Roadmap  
@@ -85,7 +85,7 @@ dataset/
   ├─ paper/  
   ├─ plastic/  
   ├─ metal/  
-  └─ organic/  
+  └─ decomposable/  
 
 
 Use ImageDataGenerator to augment data.  
@@ -233,19 +233,9 @@ Goal: Build a working prototype.
 
 Raspberry Pi camera for classification  
 
-GPIO-controlled servos for sorting  
-
-Optional LCD/OLED display to show results  
+GPIO-controlled servos for sorting   
 
 Enclosure with 4 bins (paper, plastic, metal, organic)  
-
-📘 Bonus Additions  
-
-Web dashboard using Flask or Streamlit  
-
-Data logging (how much of each category per day)  
-
-Add sound feedback (“Plastic detected!”)  
 
 🗓️ Suggested Timeline Summary  
 Week	Stage	Focus	Key Outcome  
@@ -258,8 +248,8 @@ Week	Stage	Focus	Key Outcome
 8+	Optimization	Quantization + Hybrid sensing	Faster, more reliable system  
 🧩 Optional Add-ons  
 
-Use YOLOv8 + Pi 4 for object detection.  
+Use YOLOv11n + Pi 4 for object detection.  
 
-Add cloud logging via Firebase.  
+Have Roboflow to annotate the images.  
 
-Integrate Arduino for precise actuation control.  
+Integrate GPio libs for precise actuation control.  
